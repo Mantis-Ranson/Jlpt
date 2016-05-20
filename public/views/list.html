@@ -1,0 +1,16 @@
+<div class="row" ng-hide="wordListing" ng-animate="'fade'">
+
+</br>
+
+<table class="table table-striped table-bordered" ng-repeat="level in wordFilter.selectedWords">
+<tr>
+<th>{{newHeader[$index]}}</th>
+</tr>
+
+<tr id={{level.level}} ng-repeat="words in level.words" ng-if="!($index%wordFilter.wordsPerPage) && $index >0">
+
+<td class="aWord" id={{$index}} ng-click="viewWords($event)"> {{ $index - wordFilter.wordsPerPage}} ~ {{$index}}</td>
+</tr>
+</table>
+
+</div>

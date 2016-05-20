@@ -1,0 +1,35 @@
+<div class="jumbotron text-center">
+    <h4>Select Language</h4>
+    <div class="form-group">
+        <div class="radio">
+            <label>
+                <input type="radio" name="language" value="en" ng-model="formData.language">
+                English
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="language" value="ko" ng-model="formData.language">
+                Korean
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="language" value="fr" ng-model="formData.language">
+                French
+            </label>
+        </div>
+    </div>
+    <h4>Listing Reference</h4>
+    <div class="input-group listingInput" id="sizing-addon2">
+  	<input type="text" class="form-control" placeholder="I don't understand this" aria-describedby="sizing-addon2">
+	</div>
+    <button ui-sref="lang({language:formData.language})" type="button" class="btn btn-primary .btn-block" >Submit</button>
+  </div>
+</div>
+
+<div ui-view></div>
+
+<!-- 
+ <a ui-sref=".paragraph" class="btn btn-danger">Paragraph</a>
+-->

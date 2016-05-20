@@ -1,0 +1,34 @@
+
+        .container{
+          margin-top: 2.5em;
+        }
+        .jumbotron > .btn-primary{
+        width: 100%;
+        margin-top: 1em;
+        }
+        .listingInput{
+            width: 100%;
+        }
+        h4{
+            text-align: left;
+        }
+        h3{
+            text-align: center;
+            font-weight: bold;
+        }
+
+        }
+        #ex1Slider .slider-selection{
+        background: #BABABA;
+        }
+
+        #submitButton{
+            margin-top: 1.5em;
+        }
+
+        .aWord:hover{
+            cursor: pointer;
+        }
+        .aWord{
+            font-size: 1.5em;
+        }

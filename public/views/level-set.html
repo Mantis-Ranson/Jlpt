@@ -1,0 +1,59 @@
+<div class="container">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group" role="group">
+    <button ui-sref="home" type="button" class="btn btn-default navbar-btn">Language</button>
+  </div>
+  <div class="btn-group" role="group">
+      <button ng-click="viewSorter()" type="button" class="btn btn-default navbar-btn">Sorter</button>
+  </div>
+  <div class="btn-group" role="group">
+    <button ng-click="viewList()" type="button" class="btn btn-default navbar-btn">Listings</button>
+  </div>
+    <div class="btn-group" role="group">
+    <button ng-click="lastViewed()" type="button" class="btn btn-default navbar-btn">Last Words</button>
+    </div>
+</div>
+</nav>
+
+<form  ng-hide="sorter" ng-animate="'fade'">
+    <h4>Inverse question/answer:</h4>
+    <switch name="inverser" ng-model="inverser" on=" YES" off="NO " class="wide"></switch>
+
+    <h4>JLPT Collection</h4>
+
+    <div class="form-group">
+        <label class="checkbox">
+            <input type="checkbox" ng-model="JlptLevels.L5"> JLPT5
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" ng-model="JlptLevels.L4"> JLPT4
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" ng-model="JlptLevels.L3"> JLPT3
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" ng-model="JlptLevels.L2"> JLPT2
+        </label>
+    </div>
+    <h4>Words per page</h4>
+    <div>
+    <div>
+    <rzslider
+         rz-slider-model="slider.value"
+         rz-slider-options="slider.options"></rzslider>
+    </div>
+
+     <button ng-click="limitWords()" id="submitButton" type="button" class="btn btn-info form-control">Submit</button>
+</form>
+
+</div>
+
+<div class="row" ng-hide="wordListing" ng-animate="'fade'">
+        <div ui-view="wordlist"></div>
+</div>
+
+<div class="row" ng-hide="wordViews" ng-animate="'fade'">
+        <div ui-view="wordWiews"></div>
+</div>

@@ -1,0 +1,14 @@
+</br>
+
+<table class="table table-striped table-bordered" ng-repeat="(key, value) in jlptWords" ng-if="key === wordQuery.level">
+
+<tr>
+<th>{{key}} words {{wordQuery.from}} ~ {{wordQuery.to}} </th>
+</tr>
+
+<tr ng-repeat="words in value" ng-if="($index > wordQuery.from) &&( $index <= wordQuery.to)"> 
+
+<td class="aWord" inverse={{wordFilter.inverse}} firstword={{words[0]}} secondword={{words[1]}} thirdword={{words[2]}} sibs></td>
+</tr>
+
+</table>
