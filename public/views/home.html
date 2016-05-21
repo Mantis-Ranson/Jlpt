@@ -1,35 +1,47 @@
-<div class="jumbotron text-center">
-    <h4>Select Language</h4>
-    <div class="form-group">
-        <div class="radio">
-            <label>
-                <input type="radio" name="language" value="en" ng-model="formData.language">
-                English
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="language" value="ko" ng-model="formData.language">
-                Korean
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="language" value="fr" ng-model="formData.language">
-                French
-            </label>
-        </div>
-    </div>
-    <h4>Listing Reference</h4>
-    <div class="input-group listingInput" id="sizing-addon2">
-  	<input type="text" class="form-control" placeholder="I don't understand this" aria-describedby="sizing-addon2">
-	</div>
-    <button ui-sref="lang({language:formData.language})" type="button" class="btn btn-primary .btn-block" >Submit</button>
-  </div>
+
+<div class="text-center">
+    <h1 id="landingHeader">JLPT</h1>
+    <h5>Vocabulary</h5>
+
+<div class="row">
+
+ <div class="col-md-2 fadeIn" loader>
+ <a ui-sref="lang({language:'en'})"> 
+ <img class="img-responsive" src="images/en.png" />
+ </a>
+ </div>
+
+ <div class="col-md-2 fadeIn" loader>
+ <a ui-sref="lang({language:'ko'})"> 
+ <img class="img-responsive" src="images/ko.png" />
+ </a>
+ </div>
+
+ <div class="col-md-2 fadeIn" loader>
+ <a ui-sref="lang({language:'fr'})">
+ <img class="img-responsive" src="images/fr.png" />
+ </a>
+ </div>
+
 </div>
 
-<div ui-view></div>
+<footer class="fadeIn2">
 
-<!-- 
- <a ui-sref=".paragraph" class="btn btn-danger">Paragraph</a>
--->
+<div id="socialMediaDiv">
+</div>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/Mantis-Ranson" aria-label="Follow @Mantis-Ranson on GitHub">Follow @Mantis-Ranson</a>
+
+<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+<script type="IN/Share" data-url="http://jlpt-ranson.rhcloud.com/"></script>
+
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&mobile_iframe=true&width=58&height=20&appId" width="58" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<h5>Created by Tyrone Ranson</h5>
+</footer>
+
+
+<div ui-view></div>

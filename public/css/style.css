@@ -1,29 +1,29 @@
 
-        .container{
-          margin-top: 2.5em;
-        }
-        .jumbotron > .btn-primary{
-        width: 100%;
-        margin-top: 1em;
-        }
-        .listingInput{
-            width: 100%;
-        }
+
         h4{
-            text-align: left;
+            text-align: center;
+            font-weight: bold;
         }
+
         h3{
             text-align: center;
             font-weight: bold;
         }
 
+        .form-group{
+            margin-bottom: 2em;
+        }
+
         }
         #ex1Slider .slider-selection{
-        background: #BABABA;
+        background: #3498db;
         }
 
         #submitButton{
-            margin-top: 1.5em;
+            background-color: #3498db;
+            margin: 1.5em auto 0em auto;
+            width: 30%;
+            display: block;
         }
 
         .aWord:hover{
@@ -32,3 +32,191 @@
         .aWord{
             font-size: 1.5em;
         }
+        .img-responsive {
+         margin: 0 auto;
+         width: 25%
+        }
+
+        .wide{
+            margin-top: 1em !important;
+            display: block;
+            float: right;
+        }
+
+        #landingHeader{
+            border-bottom: 3px solid #3498db;
+            width: 30%;
+            margin: 0.5em auto 0em auto;
+        }
+
+        .switchLabels{
+            position: relative;
+            font-size: 1.5em;
+            bottom: -0.9em;
+        }
+        .col-md-2{
+            margin-top: 3em;
+        }
+
+        #navDiv{
+            margin-top: 1em;
+        }
+
+        form{
+            margin-bottom: 1em;
+        }
+
+        #inverseSection{
+            height: 6em;
+        }
+        
+        .fbDiv{
+            margin-right: 1em;
+        }
+
+
+
+        #appLanguage{
+            width: 30%;
+            height: auto;
+        }
+        #appLangauge > img{
+            width: 4em;
+            height: 4em;
+        }
+        #appLangauge > img:hover{
+            cursor: pointer;
+        }
+
+        .comingSoon{
+            margin-top: 1em;
+            width: 100%;
+            font-size: 1.5em;
+            text-align: right;
+            margin-bottom: -0.5em;
+        }
+
+        .comingSoon > .comingSoonSpan{
+            float: left;
+            margin-bottom: -0.3em;
+        }
+
+        .inverseSpan{
+            float: left;
+            font-size: 1em;
+            margin-top: 1.6em;
+        }
+
+        #socialMediaDiv{
+            margin: 3em auto 1em auto;
+            border-top: 3px solid #3498db;
+            width: 30%;
+        }
+
+        footer > h5 {
+            color: #3498db;
+        }
+        
+
+
+#loader{
+    width: 80px;
+    height: 80px;
+    margin: 0px auto;
+    border:3px solid transparent;
+    border-top-color: #3498db;
+    border-radius: 50%;
+    -webkit-animation:spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
+    #loader:before {
+        content:"";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 3px solid transparent;
+        border-top-color: #e74c3c;
+        border-radius: 50%;
+        -webkit-animation:spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+    #loader:after {
+        content:"";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border: 3px solid transparent;
+        border-top-color: #3498db;
+        border-radius: 50%;
+        -webkit-animation:spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }
+
+    @webkit-keyframes spin{
+        0% {
+            -webkit-transform:rotate(0deg);
+            -ms-transform:rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100%{
+            -webkit-transform:rotate(360deg);
+            -ms-transform:rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes spin{
+         0% {
+            -webkit-transform:rotate(0deg);
+            -ms-transform:rotate(0deg);
+            transform: rotate(0deg);
+        }
+        100%{
+            -webkit-transform:rotate(360deg);
+            -ms-transform:rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+
+
+    #miniLoader{
+    width: 40px;
+    height: 40px;
+    border:2px solid transparent;
+    border-top-color: #3498db;
+    border-radius: 50%;
+    -webkit-animation:spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+    }
+
+    #miniLoader:before {
+        content:"";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        bottom: 3px;
+        border: 2px solid transparent;
+        border-top-color: #e74c3c;
+        border-radius: 50%;
+        -webkit-animation:spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+    #miniLoader:after {
+        content:"";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 2px solid transparent;
+        border-top-color: #3498db;
+        border-radius: 50%;
+        -webkit-animation:spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }

@@ -1,6 +1,6 @@
 var routerApp = angular.module('routerApp', ['ui.router','uiSwitch','rzModule']);
 
-routerApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
+routerApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $urlRouterProvider){
     
     $urlRouterProvider.otherwise('/');
     
@@ -31,12 +31,21 @@ routerApp.config(['$stateProvider', '$urlRouterProvider',function($stateProvider
    		})
 }]);
 
-
-routerApp.controller('settingsController',['$scope','jlptWords', function($scope,jlptWords){
-	$scope.sorter      = false;
-    $scope.wordListing = true;
-    $scope.wordViews   = true;
-
+routerApp.controller('settingsController',['$scope','jlptWords','$stateParams', function($scope,jlptWords,$stateParams){
+    $scope.sorter       = false;
+    $scope.wordListing  = true;
+    $scope.wordViews    = true;
+    $scope.language     = $stateParams.language;
+    $scope.displayTabs  = {list:false,words:false,sort:false} 
+    
+    if($scope.language === 'ko'){
+    $scope.ko          = true;     
+    $scope.langaugeFull = 'Korean';
+    } else if($scope.language === 'en'){
+         $scope.langaugeFull = 'English';
+     } else {
+         $scope.langaugeFull = 'French';
+     }
     $scope.JlptLevels = {
         L5:false,
         L4:false,
@@ -45,6 +54,7 @@ routerApp.controller('settingsController',['$scope','jlptWords', function($scope
     };
     $scope.header = "Sort words";
     $scope.inverser = false;
+
     $scope.slider = {
         value: 100,
         options: {
@@ -54,7 +64,6 @@ routerApp.controller('settingsController',['$scope','jlptWords', function($scope
         showTicks:true
     }
     };
-    
     $scope.jlptWords = jlptWords;
 
     $scope.limitWords = function(){
@@ -72,6 +81,9 @@ routerApp.controller('settingsController',['$scope','jlptWords', function($scope
                 newHeader.push(key);
             }
         });
+        if(selectedWordsLength === 0){
+            return false;
+        }
         $scope.newHeader = newHeader;
         $scope.selectedWords = selectedWords;
         $scope.wordFilter = { inverse:$scope.inverser,
@@ -82,7 +94,10 @@ routerApp.controller('settingsController',['$scope','jlptWords', function($scope
                             };
         $scope.sorter      = true;
         $scope.wordListing = false;
+        $scope.displayTabs.list = true;
+        $scope.displayTabs.sort = true;
     }; 
+
     $scope.viewWords = function(e){
         var fromVal  = e.target.id - $scope.slider.value;
     $scope.wordQuery = {
@@ -92,7 +107,9 @@ routerApp.controller('settingsController',['$scope','jlptWords', function($scope
     };
     $scope.wordListing = true;
     $scope.wordViews   = false;
+    $scope.displayTabs.words = true;
     }
+
     $scope.viewSorter = function(){
         $scope.sorter      = false;
         $scope.wordListing = true;
@@ -112,8 +129,9 @@ routerApp.controller('settingsController',['$scope','jlptWords', function($scope
 
 routerApp.controller('HomeController',function($scope,$state){
 	$scope.formData = {};
-    $scope.logValue = function(){
-        $state.go($scope.formData.language)
+    $scope.logValue = function(langauge){
+        console.log(langauge)
+        $state.go('lang')
     }
 });
 
@@ -133,6 +151,18 @@ routerApp.directive('sibs', function() {
                 } else if(element[0].innerHTML === secondAndThird){
                     element[0].innerHTML = attrs.firstword;
                 }
+            })
+        },
+    }
+});
+
+routerApp.directive('loader',function(){
+    return{
+        link:function(scope,element,attr){
+            element.bind('click', function(){
+                var langaugeIcon = element[0].children[0].children[0];
+                langaugeIcon.style.display = 'none';
+                element[0].id = "loader"; 
             })
         },
     }
